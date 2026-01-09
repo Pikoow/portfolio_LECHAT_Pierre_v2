@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pierre LECHAT | Portfolio BUT3</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand font-weight-bold" href="index.html">P.LECHAT</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">Parcours</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#skills">Compétences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projets.html">Projets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="container">
+            <h1 class="hero_title">Pierre <span>LECHAT</span></h1>
+            <p class="lead">Étudiant en BUT 3 Informatique - Développeur Logiciel</p>
+            <div class="mt-4">
+                <a href="#skills" class="btn-modern">Explorer mes compétences</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="mb-4">Mon Parcours</h2>
+                    <p>Actuellement en 3ème année de BUT Informatique à l'<strong>IUT de Lannion</strong>, je me spécialise dans le développement d'applications complexes et la gestion de projets agiles.</p>
+                    <div class="year-divider">
+                        <h5>2025 - 3ème Année</h5>
+                        <p class="text-muted">Stage à l'étranger à <a href="ucc.ie">l'UCC (University College Cork)</a>.</p>
+                        <h5>2024 - 2ème Année</h5>
+                        <p class="text-muted">Spécialisation en Parcours Administration, Gestion et Exploitation des données.</p>
+                        <p class="text-muted">Stage en entreprise de 10 semaines à <a href="e-is.pro">E-IS</a>.</p>
+                        <h5>2023 - 1ère Année</h5>
+                        <p class="text-muted">Bases de l'informatique (C, Web, SQL)</p>
+                        <h5>2023 - Obtention du bac</h5>
+                        <p class="text-muted">Spécialités : Mathématiques et NSI (Numérique et Sciences de l'Informatique).</p>
+                    </div>
+                    <a href="fichiers/cv.pdf" class="btn btn-outline-light mt-3">Télécharger mon CV</a>
+                    <a href="images/programme_BUT.pdf" class="btn btn-outline-light mt-3">Télécharger le programme du BUT</a>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <!-- Placeholder pour une photo ou illustration moderne -->
+                    <img src="images/oui.jpg" class="img-fluid rounded-3 shadow" style="max-height: 400px;" alt="Pierre">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section-padding" style="background: #0d1117;">
+        <div class="container">
+            <h2 class="text-center mb-5">Mes Compétences (BUT)</h2>
+            <div class="row g-4">
+                <!-- Compétence 1 -->
+                <div class="col-md-4">
+                    <div class="card-custom">
+                        <h4>Réaliser</h4>
+                        <p class="text-muted small">Développement d'applications</p>
+                        <ul class="list-unstyled">
+                            <li><a href="projets.html#sudoku" class="text-primary">- Jeu de Sudoku (C)</a></li>
+                            <li><a href="projets.html#java" class="text-primary">- App de Gestion (Java)</a></li>
+                        </ul>
+                        <div class="mt-3">
+                            <span class="skill-tag">C</span> <span class="skill-tag">Java</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Compétence 2 -->
+                <div class="col-md-4">
+                    <div class="card-custom">
+                        <h4>Optimiser</h4>
+                        <p class="text-muted small">Algorithmique et efficacité</p>
+                        <ul class="list-unstyled">
+                            <li><a href="projets.html#solveur" class="text-primary">- Solveur Sudoku</a></li>
+                            <li><a href="projets.html#cavalier" class="text-primary">- Tour du Cavalier</a></li>
+                        </ul>
+                        <div class="mt-3">
+                            <span class="skill-tag">Python</span> <span class="skill-tag">Graphes</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Compétence 3 -->
+                <div class="col-md-4">
+                    <div class="card-custom">
+                        <h4>Administrer</h4>
+                        <p class="text-muted small">Systèmes et réseaux</p>
+                        <ul class="list-unstyled">
+                            <li><a href="projets.html#docker" class="text-primary">- Virtualisation Docker</a></li>
+                            <li><a href="projets.html#apache" class="text-primary">- Serveur Apache</a></li>
+                        </ul>
+                        <div class="mt-3">
+                            <span class="skill-tag">Docker</span> <span class="skill-tag">Linux</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Compétence 4 -->
+                <div class="col-md-4">
+                    <div class="card-custom">
+                        <h4>Gérer</h4>
+                        <p class="text-muted small">Communication et management</p>
+                        <ul class="list-unstyled">
+                            <!-- <li><a href="projets.html#docker" class="text-primary">- Virtualisation Docker</a></li> -->
+                        </ul>
+                        <div class="mt-3">
+                            <!-- <span class="skill-tag">Docker</span> <span class="skill-tag">Linux</span> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Compétence 5 -->
+                <div class="col-md-4">
+                    <div class="card-custom">
+                        <h4>Conduire</h4>
+                        <p class="text-muted small">Communication et management</p>
+                        <ul class="list-unstyled">
+                            <!-- <li><a href="projets.html#docker" class="text-primary">- Virtualisation Docker</a></li> -->
+                        </ul>
+                        <div class="mt-3">
+                            <!-- <span class="skill-tag">Docker</span> <span class="skill-tag">Linux</span> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Compétence 6 -->
+                <div class="col-md-4">
+                    <div class="card-custom">
+                        <h4>Collaborer</h4>
+                        <p class="text-muted small">Communication et management</p>
+                        <ul class="list-unstyled">
+                            <!-- <li><a href="projets.html#docker" class="text-primary">- Virtualisation Docker</a></li> -->
+                        </ul>
+                        <div class="mt-3">
+                            <!-- <span class="skill-tag">Docker</span> <span class="skill-tag">Linux</span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container text-center">
+            <p class="h5 mb-4">On reste en contact ?</p>
+            <div class="social-icons">
+                <a href="#" class="mx-2 text-white"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="#" class="mx-2 text-white"><i class="fab fa-github fa-2x"></i></a>
+            </div>
+            <p class="mt-4 text-muted">&copy; 2026 Pierre LECHAT - Portfolio BUT3</p>
+        </div>
+    </footer>
+
+</body>
+</html>
