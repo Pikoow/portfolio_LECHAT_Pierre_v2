@@ -61,8 +61,10 @@ body {
     background: var(--card-bg);
     border: 1px solid #30363d;
     border-radius: 12px;
-    padding: 2rem;
+    padding: 1.5rem;
     height: 100%;
+    display: flex;
+    flex-direction: column;
     transition: transform 0.3s, border-color 0.3s;
 }
 
@@ -79,13 +81,12 @@ body {
 }
 
 .badge-year {
-    font-size: 0.8rem;
-    padding: 5px 12px;
+    font-size: 0.75rem;
+    padding: 3px 10px;
     border-radius: 20px;
     background: var(--accent);
     color: white;
     display: inline-block;
-    white-space: nowrap;
 }
 
 /* Skills Grid */
@@ -96,7 +97,40 @@ body {
     background: #21262d;
     border: 1px solid #30363d;
     margin: 4px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+}
+
+/* Compact Buttons & Actions */
+.card-actions {
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid #30363d;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-action {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.2s;
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid #30363d;
+}
+
+.btn-action:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-action.active {
+    background: var(--primary);
+    color: var(--dark-bg);
 }
 
 /* Buttons */
@@ -128,39 +162,11 @@ footer {
     margin: 40px 0;
 }
 
-/* Style pour les cartes de projet uniformisées */
-.project-card {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.project-card .card-content {
-    flex-grow: 1;
-}
-
-/* Boutons pour afficher/masquer les images */
-.image-toggle-btn {
-    background: transparent;
-    border: 1px solid var(--primary);
-    color: var(--primary);
-    padding: 5px 12px;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.3s;
-    margin: 10px 0;
-}
-
-.image-toggle-btn:hover {
-    background: var(--primary);
-    color: var(--dark-bg);
-}
-
-/* Conteneur des images */
+/* Image Container */
 .image-container {
     display: none;
     margin-top: 15px;
+    overflow: hidden;
 }
 
 .image-container.active {
@@ -168,29 +174,14 @@ footer {
     animation: fadeIn 0.3s ease-in;
 }
 
-/* Images des projets */
 .project-image {
     width: 100%;
-    max-width: 250px;
-    height: auto;
-    border-radius: 8px;
-    margin: 5px;
+    border-radius: 6px;
+    margin-bottom: 10px;
     border: 1px solid #30363d;
-    transition: transform 0.3s;
 }
 
-.project-image:hover {
-    transform: scale(1.05);
-}
-
-/* Animation pour l'apparition des images */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
 }
