@@ -7,6 +7,50 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
+    <style>
+        /* Style pour les boutons d'images */
+        .image-toggle-btn {
+            background: transparent;
+            border: 1px solid #00e5ff;
+            color: #00e5ff;
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 5px;
+        }
+        .image-toggle-btn:hover {
+            background: #00e5ff;
+            color: #0b0f19;
+        }
+        /* Conteneur des images */
+        .image-container {
+            display: none;
+            margin-top: 15px;
+        }
+        .image-container.active {
+            display: block;
+        }
+        .project-image {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            border-radius: 8px;
+            margin: 5px;
+            object-fit: cover;
+        }
+        /* Uniformisation de la hauteur des cartes */
+        .project-card {
+            height: 100%;
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-content {
+            flex-grow: 1;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -28,28 +72,47 @@
 
         <!-- ANNÉE 3 -->
         <h3 class="text-primary mt-5">BUT 3 <span class="badge bg-secondary ms-2">En cours</span></h3>
+
         <div class="row g-4 mt-2">
-            <div class="col-md-6">
-                <div class="card-custom" style="border-style: dashed; opacity: 0.6;">
-                    <h4>Stage de fin d'études / Alternance</h4>
-                    <p>Projet professionnel de 3ème année. Détails à venir en fin de semestre 6.</p>
+            <div class="col-md-4" id="sae3">
+                <div class="card-custom project-card">
+                    <div class="badge-container">
+                        <span class="badge-year">Année 3</span>
+                        <span class="badge-year">Compétence 5 et 6</span>
+                    </div>
+                    <h4>SAE : Application de recommendation de musiques</h4>
+                    <p>Création d'une application de recommendation. Développement HTML/CSS/JavaScript avec base de données PostgreSQL et partie analyse de données.</p>
+                    <div class="card-content">
+                        <!-- <button class="image-toggle-btn" onclick="toggleImages('sae3-images')">Afficher les images</button>
+                        <div class="image-container" id="sae3-images">
+                            <img src="images/sae3_1.png" class="project-image" alt="SAE3 Interface 1">
+                            <img src="images/sae3_2.png" class="project-image" alt="SAE3 Interface 2">
+                        </div> -->
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="card-custom" style="border-style: dashed; opacity: 0.6;">
-                    <h4>SAE Spécialisation</h4>
-                    <p>Développement avancé selon le parcours choisi (A ou C).</p>
-                </div>
-            </div>
-            
+
             <!-- Gérer - Analyse Football -->
             <div class="col-md-4" id="football">
-                <div class="card-custom">
-                    <span class="badge-year">Année 3</span>
-                    <span class="badge-year">Compétence 4</span>
+                <div class="card-custom project-card">
+                    <div class="badge-container">
+                        <span class="badge-year">Année 3</span>
+                        <span class="badge-year">Compétence 4</span>
+                    </div>
                     <h4>Analyse Données Footbalistiques</h4>
-                    <p>Création d'une analyse complète de données footbalistiques. Traitement de fichiers CSV et visualisation des statistiques.</p>
-                    <a href="fichiers/football_portfolio.zip" class="btn btn-sm btn-outline-light">Code source</a>
+                    <p>Création d'une analyse complète de données footbalistiques. Traitement de fichiers CSV et visualisation des statistiques avec AFC et ACP.</p>
+                    <div class="card-content">
+                        <!-- Bouton pour afficher les images -->
+                        <button class="image-toggle-btn" onclick="toggleImages('football-images')">Afficher les images</button>
+                        <!-- Conteneur des images -->
+                        <div class="image-container" id="football-images">
+                            <img src="images/football1.png" class="project-image" alt="Analyse Football 1">
+                            <img src="images/football2.png" class="project-image" alt="Analyse Football 2">
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <a href="fichiers/football_portfolio.zip" class="btn btn-sm btn-outline-light">Code source</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -59,89 +122,129 @@
         <div class="row g-4 mt-2">
             <!-- Réaliser - SAE 2 -->
             <div class="col-md-4" id="sae2">
-                <div class="card-custom">
-                    <span class="badge-year">Année 2</span>
-                    <span class="badge-year">Compétence 1</span>
+                <div class="card-custom project-card">
+                    <div class="badge-container">
+                        <span class="badge-year">Année 2</span>
+                        <span class="badge-year">Compétence 1</span>
+                    </div>
                     <h4>SAE : Site Web de Réservations</h4>
                     <p>Création d'un site web de réservations d'activités en groupe. Développement HTML/CSS/JavaScript avec base de données PostgreSQL.</p>
-                    <a href="fichiers/sae2_portfolio.zip" class="btn btn-sm btn-outline-light">Code source</a>
+                    <div class="card-content">
+                        <button class="image-toggle-btn" onclick="toggleImages('sae2-images')">Afficher les images</button>
+                        <div class="image-container" id="sae2-images">
+                            <img src="images/sae2_1.png" class="project-image" alt="SAE2 Interface 1">
+                            <img src="images/sae2_2.png" class="project-image" alt="SAE2 Interface 2">
+                        </div>
+                    </div>
                 </div>
             </div>
             
             <!-- Réaliser - Publications -->
             <div class="col-md-4" id="publications">
-                <div class="card-custom">
-                    <span class="badge-year">Année 2</span>
-                    <span class="badge-year">Compétence 1</span>
+                <div class="card-custom project-card">
+                    <div class="badge-container">
+                        <span class="badge-year">Année 2</span>
+                        <span class="badge-year">Compétence 1</span>
+                    </div>
                     <h4>App Visualisation Publications</h4>
                     <p>Création d'une application de visualisation de publications avec JavaScript. Intégration avec base de données MongoDB.</p>
-                    <a href="fichiers/publications_portfolio.zip" class="btn btn-sm btn-outline-light">Code source</a>
+                    <div class="card-content">
+                        <!-- <button class="image-toggle-btn" onclick="toggleImages('publications-images')">Afficher les images</button>
+                        <div class="image-container" id="publications-images">
+                            <img src="images/publications_1.png" class="project-image" alt="Publications App 1">
+                            <img src="images/publications_2.png" class="project-image" alt="Publications App 2">
+                        </div> -->
+                    </div>
                 </div>
             </div>
 
             <!-- Optimiser - SAE 2 -->
             <div class="col-md-4" id="sae2opt">
-                <div class="card-custom">
-                    <span class="badge-year">Année 2</span>
-                    <span class="badge-year">Compétence 2</span>
+                <div class="card-custom project-card">
+                    <div class="badge-container">
+                        <span class="badge-year">Année 2</span>
+                        <span class="badge-year">Compétence 2</span>
+                    </div>
                     <h4>SAE : Optimisation Requêtes</h4>
                     <p>Optimisation algorithmique des requêtes et requêtes SQL complexes pour le site de réservations.</p>
-                    <a href="fichiers/sae2_portfolio.zip" class="btn btn-sm btn-outline-light">Documentation</a>
                 </div>
             </div>
 
             <!-- Administrer - Packet Tracer -->
             <div class="col-md-4" id="packet">
-                <div class="card-custom">
-                    <span class="badge-year">Année 2</span>
-                    <span class="badge-year">Compétence 3</span>
+                <div class="card-custom project-card">
+                    <div class="badge-container">
+                        <span class="badge-year">Année 2</span>
+                        <span class="badge-year">Compétence 3</span>
+                    </div>
                     <h4>Packet Tracer - Réseaux</h4>
                     <p>Configuration et simulation de réseaux complexes. Maîtrise des protocoles et routage avec Packet Tracer.</p>
-                    <a href="fichiers/packet_tracer_portfolio.zip" class="btn btn-sm btn-outline-light">Fichiers</a>
+                    <div class="mt-3">
+                        <a href="fichiers/Exemple_TD_reseau.pdf" class="btn btn-sm btn-outline-light">Fichiers</a>
+                    </div>
                 </div>
             </div>
 
             <!-- Gérer - PostgreSQL -->
             <div class="col-md-4" id="postgres">
-                <div class="card-custom">
-                    <span class="badge-year">Année 2</span>
-                    <span class="badge-year">Compétence 4</span>
+                <div class="card-custom project-card">
+                    <div class="badge-container">
+                        <span class="badge-year">Année 2</span>
+                        <span class="badge-year">Compétence 4</span>
+                    </div>
                     <h4>BDD PostgreSQL</h4>
                     <p>Conception et développement d'une base de données complète pour le site de réservations avec PostgreSQL.</p>
-                    <a href="fichiers/sae2_portfolio.zip" class="btn btn-sm btn-outline-light">Scripts SQL</a>
                 </div>
             </div>
 
             <!-- Gérer - MongoDB -->
             <div class="col-md-4" id="mongodb">
-                <div class="card-custom">
-                    <span class="badge-year">Année 2</span>
-                    <span class="badge-year">Compétence 4</span>
+                <div class="card-custom project-card">
+                    <div class="badge-container">
+                        <span class="badge-year">Année 2</span>
+                        <span class="badge-year">Compétence 4</span>
+                    </div>
                     <h4>BDD MongoDB</h4>
-                    <p>Conception d'une base de données NoSQL MongoDB pour l'application de publications.</p>
-                    <a href="fichiers/publications_portfolio.zip" class="btn btn-sm btn-outline-light">Collections</a>
+                    <p>Conception d'une base de données MongoDB pour l'application de publications.</p>
+                    <div class="card-content">
+                        <button class="image-toggle-btn" onclick="toggleImages('mongodb-images')">Afficher les images</button>
+                        <div class="image-container" id="mongodb-images">
+                            <img src="images/mongodb1.png" class="project-image" alt="MongoDB Collections">
+                        </div>
+                    </div>
+                    <!-- <div class="mt-3">
+                        <a href="fichiers/publications_portfolio.zip" class="btn btn-sm btn-outline-light">Collections</a>
+                    </div> -->
                 </div>
             </div>
 
             <!-- Conduire - Agile -->
             <div class="col-md-4" id="agile">
-                <div class="card-custom">
-                    <span class="badge-year">Année 2</span>
-                    <span class="badge-year">Compétence 5</span>
+                <div class="card-custom project-card">
+                    <div class="badge-container">
+                        <span class="badge-year">Année 2</span>
+                        <span class="badge-year">Compétence 5</span>
+                    </div>
                     <h4>SAE : Gestion Agile</h4>
                     <p>Participation à un projet Agile de 7 personnes. Sprints, dailies, et livraison itérative du projet SAE.</p>
-                    <a href="fichiers/sae2_portfolio.zip" class="btn btn-sm btn-outline-light">Documentation</a>
                 </div>
             </div>
 
             <!-- Collaborer - Stage -->
             <div class="col-md-4" id="stage">
-                <div class="card-custom">
-                    <span class="badge-year">Année 2</span>
-                    <span class="badge-year">Compétence 6</span>
+                <div class="card-custom project-card">
+                    <div class="badge-container">
+                        <span class="badge-year">Année 2</span>
+                        <span class="badge-year">Compétence 6</span>
+                    </div>
                     <h4>Stage Entreprise E-IS</h4>
                     <p>Stage de 10 semaines à E-IS. Participation au développement de features sur projet d'entreprise en équipe.</p>
-                    <a href="fichiers/stage_portfolio.pdf" class="btn btn-sm btn-outline-light">Rapport</a>
+                    <div class="card-content">
+                        <button class="image-toggle-btn" onclick="toggleImages('stage-images')">Afficher les images</button>
+                        <div class="image-container" id="stage-images">
+                            <img src="images/sumaris.png" class="project-image" alt="Exemple sumaris">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -151,141 +254,240 @@
         <div class="row g-4 mt-2">
             <!-- Réaliser - Sudoku -->
             <div class="col-md-4" id="sudoku">
-                <div class="card-custom">
-                    <span class="badge-year">Année 1</span>
-                    <span class="badge-year">Compétence 1</span>
+                <div class="card-custom project-card">
+                    <div class="badge-container">
+                        <span class="badge-year">Année 1</span>
+                        <span class="badge-year">Compétence 1</span>
+                    </div>
                     <h4>Jeu de Sudoku (C)</h4>
                     <p>De la conception graphique au moteur de jeu en C. Ce projet englobait toutes les étapes du maquettage jusqu'au développement.</p>
-                    <img src="images/sudoku.jpg" class="img-fluid rounded mb-3" style="max-width: 200px;" alt="Sudoku Design">
-                    <img src="images/sudoku_reel.png" class="img-fluid rounded mb-3" alt="Sudoku Jeu">
-                    <a href="fichiers/sudoku_portfolio.zip" class="btn btn-sm btn-outline-light">Télécharger</a>
+                    <div class="card-content">
+                        <button class="image-toggle-btn" onclick="toggleImages('sudoku-images')">Afficher les images</button>
+                        <div class="image-container" id="sudoku-images">
+                            <img src="images/sudoku.jpg" class="project-image" alt="Sudoku Design">
+                            <img src="images/sudoku_reel.png" class="project-image" alt="Sudoku Jeu">
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <a href="fichiers/sudoku_portfolio.zip" class="btn btn-sm btn-outline-light">Télécharger</a>
+                    </div>
                 </div>
             </div>
             
             <!-- Réaliser - Spectacles -->
             <div class="col-md-4" id="java">
-                <div class="card-custom">
-                    <span class="badge-year">Année 1</span>
-                    <span class="badge-year">Compétence 1</span>
+                <div class="card-custom project-card">
+                    <div class="badge-container">
+                        <span class="badge-year">Année 1</span>
+                        <span class="badge-year">Compétence 1</span>
+                    </div>
                     <h4>Gestion de Spectacles (Java)</h4>
                     <p>Réalisation d'une petite application de gestion de spectacles et d'annulation. Ce projet en lien avec un autre (Gestion de projet) nous demandait de créer une partie d'application en fonction d'un lot.</p>
-                    <img src="images/spectacle1.png" class="img-fluid rounded mb-2" alt="Spectacle 1">
-                    <img src="images/spectacle2.png" class="img-fluid rounded mb-2" alt="Spectacle 2">
-                    <img src="images/spectacle3.png" class="img-fluid rounded mb-3" alt="Spectacle 3">
-                    <a href="fichiers/spectacles_portfolio.zip" class="btn btn-sm btn-outline-light">Télécharger</a>
+                    <div class="card-content">
+                        <button class="image-toggle-btn" onclick="toggleImages('spectacles-images')">Afficher les images</button>
+                        <div class="image-container" id="spectacles-images">
+                            <img src="images/spectacle1.png" class="project-image" alt="Spectacle 1">
+                            <img src="images/spectacle2.png" class="project-image" alt="Spectacle 2">
+                            <img src="images/spectacle3.png" class="project-image" alt="Spectacle 3">
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <a href="fichiers/spectacles_portfolio.zip" class="btn btn-sm btn-outline-light">Télécharger</a>
+                    </div>
                 </div>
             </div>
 
             <!-- Optimiser - Solveur Sudoku -->
             <div class="col-md-4" id="solveur">
-                <div class="card-custom">
-                    <span class="badge-year">Année 1</span>
-                    <span class="badge-year">Compétence 2</span>
+                <div class="card-custom project-card">
+                    <div class="badge-container">
+                        <span class="badge-year">Année 1</span>
+                        <span class="badge-year">Compétence 2</span>
+                    </div>
                     <h4>Solveur de Sudoku (C)</h4>
                     <p>Réalisation d'un solveur de sudoku en C. Ce projet reprenait celui de la création de sudoku en optimisant l'algorithme.</p>
-                    <img src="images/solveur.png" class="img-fluid rounded mb-3" alt="Solveur">
-                    <a href="fichiers/solveur_portfolio.zip" class="btn btn-sm btn-outline-light">Télécharger</a>
+                    <div class="card-content">
+                        <button class="image-toggle-btn" onclick="toggleImages('solveur-images')">Afficher les images</button>
+                        <div class="image-container" id="solveur-images">
+                            <img src="images/solveur.png" class="project-image" alt="Solveur">
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <a href="fichiers/solveur_portfolio.zip" class="btn btn-sm btn-outline-light">Télécharger</a>
+                    </div>
                 </div>
             </div>
 
             <!-- Optimiser - Tour du Cavalier -->
             <div class="col-md-4" id="cavalier">
-                <div class="card-custom">
-                    <span class="badge-year">Année 1</span>
-                    <span class="badge-year">Compétence 2</span>
+                <div class="card-custom project-card">
+                    <div class="badge-container">
+                        <span class="badge-year">Année 1</span>
+                        <span class="badge-year">Compétence 2</span>
+                    </div>
                     <h4>Le Tour du Cavalier (Python)</h4>
                     <p>Réalisation d'un programme sur le problème du tour du cavalier en se basant sur la théorie des graphes.</p>
-                    <img src="images/tour_cavalier.png" class="img-fluid rounded mb-3" alt="Tour du Cavalier">
-                    <a href="fichiers/tour_cavalier_portfolio.zip" class="btn btn-sm btn-outline-light">Télécharger</a>
+                    <div class="card-content">
+                        <button class="image-toggle-btn" onclick="toggleImages('cavalier-images')">Afficher les images</button>
+                        <div class="image-container" id="cavalier-images">
+                            <img src="images/tour_cavalier.png" class="project-image" alt="Tour du Cavalier">
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <a href="fichiers/tour_cavalier_portfolio.zip" class="btn btn-sm btn-outline-light">Télécharger</a>
+                    </div>
                 </div>
             </div>
 
             <!-- Administrer - Docker -->
             <div class="col-md-4" id="docker">
-                <div class="card-custom">
-                    <span class="badge-year">Année 1</span>
-                    <span class="badge-year">Compétence 3</span>
+                <div class="card-custom project-card">
+                    <div class="badge-container">
+                        <span class="badge-year">Année 1</span>
+                        <span class="badge-year">Compétence 3</span>
+                    </div>
                     <h4>Virtualisation Docker</h4>
                     <p>Découverte de Docker et création d'un poste de développement. Ce projet a nécessité de configurer un poste et de créer des documentations à partir de fichiers de code.</p>
-                    <img src="images/docker.png" class="img-fluid rounded mb-2" alt="Docker">
-                    <img src="images/code_docker.png" class="img-fluid rounded mb-3" alt="Code Docker">
-                    <a href="fichiers/docker_portfolio.zip" class="btn btn-sm btn-outline-light">Télécharger</a>
+                    <div class="card-content">
+                        <button class="image-toggle-btn" onclick="toggleImages('docker-images')">Afficher les images</button>
+                        <div class="image-container" id="docker-images">
+                            <img src="images/docker.png" class="project-image" alt="Docker">
+                            <img src="images/code_docker.png" class="project-image" alt="Code Docker">
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <a href="fichiers/docker_portfolio.zip" class="btn btn-sm btn-outline-light">Télécharger</a>
+                    </div>
                 </div>
             </div>
 
             <!-- Administrer - Apache -->
             <div class="col-md-4" id="apache">
-                <div class="card-custom">
-                    <span class="badge-year">Année 1</span>
-                    <span class="badge-year">Compétence 3</span>
+                <div class="card-custom project-card">
+                    <div class="badge-container">
+                        <span class="badge-year">Année 1</span>
+                        <span class="badge-year">Compétence 3</span>
+                    </div>
                     <h4>Serveur Apache</h4>
                     <p>Installation et configuration d'un serveur Apache. Ce projet a été réalisé sur une machine virtuelle et nécessitait également de connaître le PHP et le SQL.</p>
-                    <img src="images/apache.jpg" class="img-fluid rounded mb-3" alt="Apache">
-                    <a href="fichiers/apache_porfolio.zip" class="btn btn-sm btn-outline-light">Télécharger</a>
+                    <div class="card-content">
+                        <button class="image-toggle-btn" onclick="toggleImages('apache-images')">Afficher les images</button>
+                        <div class="image-container" id="apache-images">
+                            <img src="images/apache.jpg" class="project-image" alt="Apache">
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <a href="fichiers/apache_porfolio.zip" class="btn btn-sm btn-outline-light">Télécharger</a>
+                    </div>
                 </div>
             </div>
 
             <!-- Gérer - SQL -->
             <div class="col-md-4" id="sql">
-                <div class="card-custom">
-                    <span class="badge-year">Année 1</span>
-                    <span class="badge-year">Compétence 4</span>
+                <div class="card-custom project-card">
+                    <div class="badge-container">
+                        <span class="badge-year">Année 1</span>
+                        <span class="badge-year">Compétence 4</span>
+                    </div>
                     <h4>Gestion de Données (SQL)</h4>
                     <p>Création d'une base de données en SQL. Ce projet était découpé en plusieurs parties : la conception et modélisation de la base de données puis la traduction en SQL. Peuplement et création de vues.</p>
-                    <img src="images/sql.png" class="img-fluid rounded mb-2" alt="SQL">
-                    <img src="images/data.png" class="img-fluid rounded mb-3" alt="Données">
-                    <a href="fichiers/bdd_portfolio.zip" class="btn btn-sm btn-outline-light">Télécharger</a>
+                    <div class="card-content">
+                        <button class="image-toggle-btn" onclick="toggleImages('sql-images')">Afficher les images</button>
+                        <div class="image-container" id="sql-images">
+                            <img src="images/sql.png" class="project-image" alt="SQL">
+                            <img src="images/data.png" class="project-image" alt="Données">
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <a href="fichiers/bdd_portfolio.zip" class="btn btn-sm btn-outline-light">Télécharger</a>
+                    </div>
                 </div>
             </div>
 
             <!-- Conduire - Site Web -->
             <div class="col-md-4" id="site">
-                <div class="card-custom">
-                    <span class="badge-year">Année 1</span>
-                    <span class="badge-year">Compétence 5</span>
+                <div class="card-custom project-card">
+                    <div class="badge-container">
+                        <span class="badge-year">Année 1</span>
+                        <span class="badge-year">Compétence 5</span>
+                    </div>
                     <h4>Création d'un Site Web</h4>
                     <p>Création d'un site web en groupe en passant par toutes les étapes : charte graphique, maquettage, et codage HTML/CSS.</p>
-                    <img src="images/site.png" class="img-fluid rounded mb-2" alt="Site">
-                    <img src="images/code_site.png" class="img-fluid rounded mb-3" alt="Code Site">
-                    <a href="fichiers/site_portfolio.zip" class="btn btn-sm btn-outline-light">Télécharger</a>
+                    <div class="card-content">
+                        <button class="image-toggle-btn" onclick="toggleImages('site-images')">Afficher les images</button>
+                        <div class="image-container" id="site-images">
+                            <img src="images/site.png" class="project-image" alt="Site">
+                            <img src="images/code_site.png" class="project-image" alt="Code Site">
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <a href="fichiers/site_portfolio.zip" class="btn btn-sm btn-outline-light">Télécharger</a>
+                    </div>
                 </div>
             </div>
 
             <!-- Conduire - Gestion de Projet -->
             <div class="col-md-4" id="gestionproj">
-                <div class="card-custom">
-                    <span class="badge-year">Année 1</span>
-                    <span class="badge-year">Compétence 5</span>
+                <div class="card-custom project-card">
+                    <div class="badge-container">
+                        <span class="badge-year">Année 1</span>
+                        <span class="badge-year">Compétence 5</span>
+                    </div>
                     <h4>Gestion de Projet</h4>
                     <p>Gestion d'un projet informatique en lien avec la réalisation de l'application de gestion de spectacles. Création de SEL, note de cadrage, organigramme des tâches, matrice RACI, estimations et diagrammes de Gantt.</p>
-                    <img src="images/ot.png" class="img-fluid rounded mb-3" alt="Organigramme">
-                    <a href="fichiers/projet_portfolio.zip" class="btn btn-sm btn-outline-light">Télécharger</a>
+                    <div class="card-content">
+                        <button class="image-toggle-btn" onclick="toggleImages('proj-images')">Afficher les images</button>
+                        <div class="image-container" id="proj-images">
+                            <img src="images/ot.png" class="project-image" alt="Organigramme">
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <a href="fichiers/projet_portfolio.zip" class="btn btn-sm btn-outline-light">Télécharger</a>
+                    </div>
                 </div>
             </div>
 
             <!-- Collaborer - Journal Télévisé -->
             <div class="col-md-4" id="jt">
-                <div class="card-custom">
-                    <span class="badge-year">Année 1</span>
-                    <span class="badge-year">Compétence 6</span>
+                <div class="card-custom project-card">
+                    <div class="badge-container">
+                        <span class="badge-year">Année 1</span>
+                        <span class="badge-year">Compétence 6</span>
+                    </div>
                     <h4>Journal Télévisé (Équipe)</h4>
                     <p>Création d'un JT et passage à l'oral par équipe. Choix et recherches sur des sujets divers, création d'un diaporama type JT.</p>
-                    <img src="images/jt.png" class="img-fluid rounded mb-2" alt="JT">
-                    <img src="images/jt_moi.png" class="img-fluid rounded mb-3" alt="JT Présentation">
-                    <a href="fichiers/jt_portfolio.pdf" class="btn btn-sm btn-outline-light">Télécharger</a>
+                    <div class="card-content">
+                        <button class="image-toggle-btn" onclick="toggleImages('jt-images')">Afficher les images</button>
+                        <div class="image-container" id="jt-images">
+                            <img src="images/jt.png" class="project-image" alt="JT">
+                            <img src="images/jt_moi.png" class="project-image" alt="JT Présentation">
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <a href="fichiers/jt_portfolio.pdf" class="btn btn-sm btn-outline-light">Télécharger</a>
+                    </div>
                 </div>
             </div>
 
             <!-- Collaborer - Teambuilding -->
             <div class="col-md-4" id="teambuilding">
-                <div class="card-custom">
-                    <span class="badge-year">Année 1</span>
-                    <span class="badge-year">Compétence 6</span>
+                <div class="card-custom project-card">
+                    <div class="badge-container">
+                        <span class="badge-year">Année 1</span>
+                        <span class="badge-year">Compétence 6</span>
+                    </div>
                     <h4>Organisation Teambuilding</h4>
                     <p>Organisation d'un événement de teambuilding. Création de la journée, d'un flyer, d'une vidéo de présentation et d'un diaporama de présentation.</p>
-                    <img src="images/flyer.png" class="img-fluid rounded mb-2" alt="Flyer">
-                    <img src="images/video.png" class="img-fluid rounded mb-3" alt="Vidéo">
-                    <a href="fichiers/teambuilding_portfolio.zip" class="btn btn-sm btn-outline-light">Télécharger</a>
+                    <div class="card-content">
+                        <button class="image-toggle-btn" onclick="toggleImages('teambuilding-images')">Afficher les images</button>
+                        <div class="image-container" id="teambuilding-images">
+                            <img src="images/flyer.png" class="project-image" alt="Flyer">
+                            <img src="images/video.png" class="project-image" alt="Vidéo">
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <a href="fichiers/teambuilding_portfolio.zip" class="btn btn-sm btn-outline-light">Télécharger</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -301,5 +503,41 @@
             <p class="mt-4 text-muted">&copy; 2026 Pierre LECHAT - Portfolio BUT3</p>
         </div>
     </footer>
+
+    <script>
+        // Fonction pour afficher/masquer les images
+        function toggleImages(containerId) {
+            const container = document.getElementById(containerId);
+            const button = container.previousElementSibling;
+            
+            if (container.classList.contains('active')) {
+                container.classList.remove('active');
+                button.textContent = 'Afficher les images';
+            } else {
+                container.classList.add('active');
+                button.textContent = 'Masquer les images';
+            }
+        }
+
+        // Script pour uniformiser la hauteur des cartes
+        document.addEventListener('DOMContentLoaded', function() {
+            // Récupérer toutes les cartes de projet
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            // Trouver la hauteur maximale
+            let maxHeight = 0;
+            projectCards.forEach(card => {
+                const height = card.offsetHeight;
+                if (height > maxHeight) {
+                    maxHeight = height;
+                }
+            });
+            
+            // Appliquer la hauteur maximale à toutes les cartes
+            projectCards.forEach(card => {
+                card.style.minHeight = maxHeight + 'px';
+            });
+        });
+    </script>
 </body>
 </html>

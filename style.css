@@ -71,14 +71,21 @@ body {
     border-color: var(--primary);
 }
 
+.badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
 .badge-year {
     font-size: 0.8rem;
     padding: 5px 12px;
     border-radius: 20px;
     background: var(--accent);
     color: white;
-    margin-bottom: 10px;
     display: inline-block;
+    white-space: nowrap;
 }
 
 /* Skills Grid */
@@ -119,4 +126,71 @@ footer {
     border-left: 3px solid var(--primary);
     padding-left: 20px;
     margin: 40px 0;
+}
+
+/* Style pour les cartes de projet uniformisées */
+.project-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card .card-content {
+    flex-grow: 1;
+}
+
+/* Boutons pour afficher/masquer les images */
+.image-toggle-btn {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 10px 0;
+}
+
+.image-toggle-btn:hover {
+    background: var(--primary);
+    color: var(--dark-bg);
+}
+
+/* Conteneur des images */
+.image-container {
+    display: none;
+    margin-top: 15px;
+}
+
+.image-container.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in;
+}
+
+/* Images des projets */
+.project-image {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 8px;
+    margin: 5px;
+    border: 1px solid #30363d;
+    transition: transform 0.3s;
+}
+
+.project-image:hover {
+    transform: scale(1.05);
+}
+
+/* Animation pour l'apparition des images */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
